@@ -1,0 +1,28 @@
+{
+  "name": "restify-ad-auth",
+  "version": "1.0.0",
+  "description": "LDAP authentication for Active Directory in Restify",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/osirisguitar/restify-ad-auth.git"
+  },
+  "keywords": [
+    "LDAP",
+    "AD",
+    "Restify"
+  ],
+  "author": "Anders Norrback Bornholm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/osirisguitar/restify-ad-auth/issues"
+  },
+  "homepage": "https://github.com/osirisguitar/restify-ad-auth#readme",
+  "dependencies": {
+    "ldapjs": "^1.0.1",
+    "restify-errors": "^4.3.0"
+  }
+}
