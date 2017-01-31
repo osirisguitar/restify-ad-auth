@@ -4,7 +4,7 @@ var ldapAuthUser = require('./lib/ldapAuthUser');
 var errors = require('restify-errors');
 
 module.exports = {
-  createMiddleware: function (options) {
+  createAuthenticationMiddleware: function (options) {
     return function (req, res, next) {
       // Check http headers
       if (!req.headers.authorization) {
@@ -26,7 +26,7 @@ module.exports = {
       var username = auth[0];
       var password = auth[1];
 
-      ldapAuthUser.authorize(username, password, options)
+      ldapAuthUser.authenticate(username, password, options)
         .then(user => {
           req.user = user;
           return next();
