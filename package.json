@@ -1,6 +1,6 @@
 {
   "name": "restify-ad-auth",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "LDAP authentication and authorization using Active Directory in Restify",
   "main": "index.js",
   "scripts": {

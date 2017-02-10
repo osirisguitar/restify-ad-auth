@@ -12,12 +12,12 @@ module.exports = {
         return next(new errors.UnauthorizedError());            
       }
       let header = req.headers.authorization.split(' ');
-      if(header[0] != 'Basic') {
+      if (header[0] !== 'Basic') {
         res.setHeader('WWW-Authenticate', 'Basic realm="Basic realm"');
         return next(new errors.UnauthorizedError());
       }
       let auth = new Buffer(header[1], 'base64').toString().split(':');
-      if (auth.length != 2) {
+      if (auth.length !== 2) {
         res.setHeader('WWW-Authenticate', 'Basic realm="Basic realm"');
         return next(new errors.UnauthorizedError());
       }
@@ -48,7 +48,7 @@ module.exports = {
       });
 
       let userHasScope = allowedScopes.some(scope => {
-        return userGroupCns.indexOf(scope) > 0;
+        return userGroupCns.indexOf(scope) > -1;
       });
 
       if (userHasScope) {
