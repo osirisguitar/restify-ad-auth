@@ -26,7 +26,7 @@ module.exports = {
       var username = auth[0];
       var password = auth[1];
 
-      ldapAuthUser.authenticate(username, password, options)
+      return ldapAuthUser.authenticate(username, password, options)
         .then(user => {
           req.user = user;
           return next();
